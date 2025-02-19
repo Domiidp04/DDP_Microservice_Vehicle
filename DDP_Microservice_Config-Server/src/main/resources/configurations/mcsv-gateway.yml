@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mcsv-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Permite descubrir microservicios en Eureka automáticamente
+          lower-case-service-id: true  # Convierte los nombres de servicio a minúsculas
+      routes:
+        - id: auth-service
+          uri: lb://mcsv-auth  # Redirige a mcsv-auth registrado en Eureka
+          predicates:
+            - Path=/api/v0/auth/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # URL del servidor Eureka
+    fetch-registry: true  # Indica si debe obtener la lista de instancias de Eureka
+    register-with-eureka: true  # Indica si debe registrarse en Eureka
+
+

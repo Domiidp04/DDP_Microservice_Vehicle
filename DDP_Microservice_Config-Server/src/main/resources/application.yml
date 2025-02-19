@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: mcsv-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # URL del servidor Eureka
+    fetch-registry: true  # Indica si debe obtener la lista de instancias de Eureka
+    register-with-eureka: true  # Indica si debe registrarse en Eureka
