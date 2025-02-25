@@ -1,1 +1,5 @@
-spring.application.name=DDP_Microservice_Car
+spring:
+  application:
+    name: mcsv-car
+  config:
+    import: optional:configserver:http://localhost:8888
