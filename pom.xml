@@ -16,7 +16,7 @@
 
 	<modules>
 		<module>DDP_Microservice_Eureka</module>
-		<module>DDP_Microservice_Auth-Server</module>
+		<module>DDP_Microservice_Car</module>
 		<module>DDP_Microservice_Gateway</module>
 		<module>DDP_Microservice_Config-Server</module>
 	</modules>
