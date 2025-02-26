@@ -2,7 +2,6 @@ package DDP.Microservice.Car.application.services;
 
 import DDP.Microservice.Car.application.repositories.CarRepository;
 import DDP.Microservice.Car.domain.dto.CarDto;
-import DDP.Microservice.Car.domain.models.CarModel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +29,13 @@ public class CarService {
 
     public void delete(Long id) {
         carRepository.delete(id);
+    }
+
+    public Optional<CarDto> getByLicensePlate(String licensePlate) {
+        return carRepository.getByLicensePlate(licensePlate);
+    }
+
+    public CarDto update(Long id, CarDto carDto) {
+        return carRepository.update(id, carDto);
     }
 }

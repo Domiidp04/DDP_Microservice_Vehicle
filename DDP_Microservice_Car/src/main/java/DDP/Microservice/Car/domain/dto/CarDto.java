@@ -24,11 +24,6 @@ public class CarDto {
 
     private String licensePlate;
 
-
-    public void setEstimatedTime(Long estimatedTime) {
-        this.estimatedTime = 100L;
-    }
-
     public CarDto(CarModel carModel) {
         this.brand = carModel.getBrand();
         this.model = carModel.getModel();
